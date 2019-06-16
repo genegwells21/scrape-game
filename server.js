@@ -8,6 +8,9 @@ var axios = require("axios");
 var PORT = process.env.PORT || 4200;
 var app = express();
 var router = express.Router();
+// this is referencing and requiring the routes with our router
+require("./config/routes")(router);
+
 app.use(express.static(__dirname + "/public"));
 
 app.engine("handlebars", expressHandlebars({
