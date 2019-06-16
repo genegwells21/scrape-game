@@ -62,8 +62,7 @@ router.get("api/notes/:headlines_id?", function(req, res)   {
     if (req.params.headline_id) {
         query._id = req.params.headline_id;
     }
-// this is using our get function via our notes controller based on the users input
-    notesController.get(query, function(err, data)  {
+//    notesController.get(query, function(err, data)  {
         res.json(data);
     });
 });
@@ -79,5 +78,5 @@ router.delete("/api/notes/:id", function(req,res)   {
 router.post("/api/notes", function(req,res)  {
     notesController.save(req.body, function(data)   {
         res.json(data);
-    }
-}
+    })
+});
